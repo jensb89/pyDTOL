@@ -7,8 +7,10 @@ The repo contains some code to use the Data Translation AD/DA devices via python
 DT Open Layers SDK has to be installed on the PC. When you have installed the driver for your AD/DA device, you probably have this installed already. 
 
 When using python 32bit, change the library in "DTOL_prototypes.py" to the 32bit version:
+```python
     dll = ctypes.CDLL(find_library('oldaapi32'))
     dll2 = ctypes.CDLL(find_library('OLMEM32'))
+```
 
 ## Usage
 `analog_input_get_single_vals.py` and `analog_output_set_single_vals.py` are two examples of how to use the code. The main class is defined in `DTOL.py`, the ctypes protoype function are outsoruced in the `DTOL_prototypes.py` and `DTOL_defs.py` files.
